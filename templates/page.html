@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+   <div class="left">
+        {% include 'left_forms.html' %}
+    </div><!-------left------>
+    
+    <div class="right">
+        <h1>Автотехцентр «Авангард»: выбирайте лучший современный автосервис ЮЗАО</h1>
+        <div class="content_in">
+            {{ content|safe }}
+        </div><!-------content_in------>
+    </div><!-------right------>
+    
+    <div class="clear"></div>
+    
+    <div class="after">
+        {% include 'slider.html' %}
+    </div><!-----after---->
+{% endblock %}

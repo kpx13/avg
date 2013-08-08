@@ -209,7 +209,7 @@ width: 618px;
 margin: 0 auto;
 }
 .blog h1 {}
-.blog span.date {
+span.date {
 border-bottom: 2px solid #d00805;
 display: block;
 text-align: right;

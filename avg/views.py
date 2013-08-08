@@ -10,6 +10,11 @@ from django.template import RequestContext
 from pages.models import Page
 from action.models import Action
 from slideshow.models import Slider
+from services.models import Article as ServiceArticle
+from action.models import Action
+from articles.models import Article as ArticleArticle
+from blog.models import Article as BlogArticle
+from about.models import Article as AboutArticle
 
 from subscribe.forms import SubscribeForm
 from request.forms import RequestForm
@@ -38,7 +43,63 @@ def home(request):
     c = get_common_context(request)
     c.update(Page.get_by_slug('home'))
     c['actions'] = Action.objects.all()
+    c['request_url'] = 'home'
     return render_to_response('home.html', c, context_instance=RequestContext(request))
+
+def services(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = ServiceArticle.get_by_slug(page_name)
+        c['articles'] = ServiceArticle.objects.all()
+        c['base_url'] = 'services'
+        c['base_title'] = u'Услуги'
+        return render_to_response('articles_base.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/services/%s/' % ServiceArticle.objects.all()[0].slug)
+    
+def actions(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = Action.get_by_slug(page_name)
+        c['articles'] = Action.objects.all()
+        c['base_url'] = 'actions'
+        c['base_title'] = u'Акции'
+        return render_to_response('articles_base.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/actions/%s/' % Action.objects.all()[0].slug)
+    
+def articles(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = ArticleArticle.get_by_slug(page_name)
+        c['articles'] = ArticleArticle.objects.all()
+        c['base_url'] = 'articles'
+        c['base_title'] = u'Статьи'
+        return render_to_response('articles_base.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/articles/%s/' % ArticleArticle.objects.all()[0].slug)
+    
+def blog(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = BlogArticle.get_by_slug(page_name)
+        c['articles'] = BlogArticle.objects.all()
+        c['base_url'] = 'blog'
+        c['base_title'] = u'Блог'
+        return render_to_response('articles_base.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/blog/%s/' % BlogArticle.objects.all()[0].slug)
+
+def about(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = AboutArticle.get_by_slug(page_name)
+        c['articles'] = AboutArticle.objects.all()
+        c['base_url'] = 'about'
+        c['base_title'] = u'О нас'
+        return render_to_response('articles_base.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/about/%s/' % AboutArticle.objects.all()[0].slug)
 
 """
 def call(request):

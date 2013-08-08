@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ a.title }}{% endblock %}
+
+
+{% block content %}
+    <div class="left">
+        <div class="left_menu">
+            <ul>
+                <li>
+                    <a href="#"><h4>{{ base_title }}</h4></a>
+                    <ul>
+                        {% for c in articles %}
+                            <li {% if c.slug == a.slug %} class="current" {% endif %}>
+                                <a href="/{{ base_url }}/{{ c.slug }}/">{{ c.title }}</a>
+                            </li>
+                        {% endfor %}
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div><!--left_menu--->
+        {% include 'left_forms.html' %}
+    </div><!-------left------>
+    <div class="right">
+        <h1>{{ a.title }}</h1>
+        
+        {% if base_url == 'blog' %}
+            <span class="date">{{ a.date }}</span>
+        {% endif %}
+        
+        <div class="content_in">
+            {% if a.image %} <img src="/media/{{ a.image }}/" alt="">{% endif %}
+            {{ a.content|safe }}
+        </div><!-------Content_in------>
+        
+        {% if base_url == 'about' %}
+            <div class="content_in">
+                <div class="time">
+                    <strong>Время работы:</strong><br />
+                    пн-сб 8.00–17.00 (без перерывов)<br />
+                    вс – выходной
+                </div>
+            
+                <div class="address">
+                    <strong>Наш адрес: </strong><br />
+                    г. Москва, ул. Миклухо-маклая, 15/3.
+                    <ul class="phone">
+                        <li>
+                            8 (495) 434-00-30
+                        </li>
+                        <li>
+                            8 (965) 197-67-67
+                        </li>
+                    </ul>
+                </div>
+        
+            </div><!-------content_in2------>
+        {% endif %}
+        
+        {% if base_url == 'services' %}
+        <div class="link">
+            <div class="our_work">
+                Примеры наших работ <a class="more" href="#">Подробнее...</a>
+            </div>
+            <div class="soc_link">
+                <span>Поделиться</span>
+                <a class="face" href="#"></a>
+                <a class="vk" href="#"></a>
+                <a class="tw" href="#"></a>
+                <a class="in" href="#"></a>
+            </div>
+        </div>
+        {% endif %}
+    </div><!-------right------>
+    
+    <div class="clear"></div>
+
+    <div class="after">
+        {% include 'slider.html' %}
+    </div><!-----after---->
+{% endblock %}

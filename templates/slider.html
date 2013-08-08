@@ -1,0 +1,23 @@
+<div id="silder">
+    <div id="sildercontent">
+        {% for s in slideshow %}
+            <div class="silderitem">
+                <div  class="portfoliocontent" >
+                    <h4>{{ s.title }}</h4>
+                    {{ s.content|safe }}
+                    <img src="/media/{{ s.image }}" />
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div id="sildernav">
+        <ul id="slnav">
+            {% for s in slideshow %}
+                <li class="slnav {% if forloop.first %}active{% endif %}"><span></span></li>
+            {% endfor %}
+        </ul> 
+    </div>
+    
+    <div class="clear"></div>
+</div><!-----slider---->

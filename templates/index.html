@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Главная</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		
+		<script type="text/javascript" language="javascript" src="js/jquery-latest.pack.js" ></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.suSlider_main.js" ></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.suSlider.js" ></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.leanModal.min.js" ></script>
+		<script type="text/javascript">
+			$(function() {
+    			$('a[rel*=leanModal]').leanModal({ top : 100, closeButton: ".modal_close" });		
+			});
+		</script>
+        <script type="text/javascript" language="javascript"  >
+              $(document).ready(function(){ 
+				  $("#sildercontent").suSlider({
+				  mode: "fade",
+				  speed: 1000,
+				  select:12000,
+				  auto:true,
+				  wrapper_class: "portfolio_container"
+				  });
+			  });
+        </script>
+		<script type="text/javascript" language="javascript"  >
+			$(document).ready(function(){ 
+				$("#sildercontent_main").suSlider_main({
+				mode: "fade",
+				peed: 1000,
+				select:12000,
+				auto:true,
+				wrapper_class: "portfolio_main"
+				});
+			});
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+		    <div class="header">
+		        <a class="logo" href="#"><img src="images/logo.png" alt="Авангард Техцентр" /></a>
+			        <div class="zap">
+			            <span>Запишись на техосмотр в Авангард</span>
+			            <br />
+						<a class="more" href="#">Подробнее...</a>
+			            
+			        </div> 
+			    <div class="contact">
+			        <span class="address">г. Москва, ул. Миклухо-маклая, 15/3.</span>
+			        <div class="phone">
+			            8 (495) 434-00-30
+				        <br />
+				        8 (965) 197-67-67
+			        </div>
+			    </div> 
+		    </div> <!-----header---->
+		   
+		    <div class="main_menu">
+		        <ul>
+			        <li class="current">
+			            <a href="#">Главная</a>
+			        </li>
+			        <li>
+			            <a href="#">Услуги</a>
+			        </li>
+			        <li>
+			            <a href="#">Корпоративным клиентам</a>
+			        </li>
+			        <li>
+			            <a href="#">Акции</a>
+			        </li>
+					<li>
+			            <a href="#">Статьи</a>
+			        </li>
+			        <li>
+			            <a href="#">Блог</a>
+			        </li>
+			        <li>
+			            <a href="#">О нас</a>
+			        </li>
+			        <li>
+			            <a href="#">Контакты</a>
+			        </li>
+			    </ul>
+		    </div><!-----main_menu---->
+		   
+		    <div class="content">
+		        <div class="left">
+			        <div class="left_a_one">
+						<span>Подпишись на Спец. предложения в “АВАНГАРД”</span>
+						<input type="text" placeholder="Ваш e-mail"/>
+						<a class="more" href="#">Подписаться</a>
+					</div>
+					<div class="left_a_two">
+						<span>Запишись на диагностику ON_LINE</span>
+						<a id="go" rel="leanModal" name="signup" href="#signup">Далее</a>
+						
+					</div>
+				</div><!-----left---->
+				
+				<div class="right">
+					<div id="slider">
+						<div id="sildercontent_main">
+							<div class="silderitem_main">
+								<div  class="portfoliocontent_main" >
+									<img src="images/slider.jpg" alt="" />
+								</div>
+							</div>
+							<div class="silderitem_main">
+								<div  class="portfoliocontent" >
+									<img src="images/slider.jpg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div id="sildernav_main">
+								<ul id="slnav_main">
+									<li class="slnav_main active"><span></span></li>
+									<li class="slnav_main"><span></span></li>
+								</ul> 
+						</div>
+						
+					</div><!-----silder_main---->
+				</div><!-----right---->
+			 
+				<div class="after">
+					<h1>Автотехцентр «Авангард»  гарантирует вам :</h1>
+						<div class="after_a_one">
+							<div class="yes_list">
+								<ul>
+									<li>
+										<h3>Надежность</h3>
+											Диагностика автомобиля и компьютерная диагностика двигателя;
+									</li>
+									<li>
+										<h3>Качество</h3>
+											Все работы ведут только опытные специалисты на самом современном и качественном оборудовании.
+									</li>
+									<li>
+										<h3>Выгода</h3>
+											Своим клиентам мы предлагаем разумные цены и индивидуальный подход в каждом отдельном случае.
+									</li>
+									<li>
+										<h3>Удобство</h3>
+											Скоротать время ремонта вашего автомобиля вы можете в комфортной лиентской зоне с бесплатным интернетом или нашем уютном кафе.
+									</li>
+								</ul>
+							</div>
+						</div><!-----after_one---->
+						
+						<div id="silder">
+							<div id="sildercontent">
+								<div class="silderitem">
+									<div  class="portfoliocontent" >
+										<h4>Течь радиатора охлаждения автомобиля</h4>
+										<p>Неприятность, которая происходит из-за повреждения или износа. Наиболее надежным методом устранения данной неисправности является пайка. Ни холодная сварка, ни герметики в подобной ситуации не способны решить проблему столь эффективно.</p>
+										<a href="#"><img src="images/radiator_slide.png" /></a>
+										<a class="more" href="#">Подробнее...</a>
+									</div>
+								</div>
+		  
+								<div class="silderitem">
+									<div  class="portfoliocontent" >
+										<h4>Течь радиатора охлаждения автомобиля</h4>
+										<p>2</p>
+										<a href="#"><img src="images/radiator_slide.png" /></a>
+										<a class="more" href="#">Подробнее...</a>
+									</div>
+								</div>
+								
+								<div class="silderitem">
+									<div  class="portfoliocontent" >
+										<h4>Течь радиатора охлаждения автомобиля</h4>
+										<p>3</p>
+										<a href="#"><img src="images/radiator_slide.png" /></a>
+										<a class="more" href="#">Подробнее...</a>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sildernav">
+								<ul id="slnav">
+									<li class="slnav active"><span></span></li>
+									<li class="slnav"><span></span></li>
+									<li class="slnav"><span></span></li>
+								</ul> 
+							</div>
+							
+							<div class="clear"></div>
+						</div><!-----slider---->
+			   				   
+			  	</div><!-----after---->
+		    </div><!-----content---->
+		   
+			<div class="footer">
+				<span>АВАНГАРД 2013 © Все права защищены</span>
+			</div>
+		   
+			<div id="signup">
+				<div id="signup-ct">
+					<div id="signup-header">
+						<h2>Запись на диагностику в Автотехцентр «Авангард» :</h2>
+						<a class="modal_close" href="#"></a>
+					</div>
+					
+					<form action="">
+		 
+						<div class="txt-fld">
+						<label for="">Имя*:</label>
+						<input id="" class="good_input" name="" type="text">
+
+						</div>
+						<div class="txt-fld">
+							<label for="">Фамилия*:</label>
+							<input id="" name="" type="text">
+						</div>
+						<div class="txt-fld">
+							<label for="">Отчество:</label>
+							<input id="" name="" type="text">
+
+						</div>
+						<div class="txt-fld">
+							<label for="">Телефон*:</label>
+							<input id="" name="" type="text">
+
+						</div>
+						<div class="txt-fld">
+							<label for="">E-mail*:</label>
+							<input id="" name="" type="text">
+
+						</div>
+						<div class="txt-fld">
+							<label for="">Марка*:</label>
+								<div class="select">
+									<select  name="type" id="type">
+										<option selected="selected">марка 1</option>
+										<option>марка 2</option>
+									</select>
+								</div>
+
+						</div>
+						<div class="txt-fld">
+							<label for="">Код выпуска*:</label>
+								<div class="select">
+									<select  name="type" id="type">
+										<option selected="selected">2012</option>
+										<option>2013</option>
+									</select>
+								</div>
+
+						</div>
+						<div class="txt-fld">
+							<label for="">Приблизительно опишите неисправность или какие необходимо провести работы* :</label>
+							<textarea id="" name="" type="text"></textarea>
+
+						</div>
+						<span>*обязательные поля для заполнения</span>
+						<div class="btn-fld">
+							<button type="submit">Отправить</button>
+						</div>
+					</form>
+					<div class="red_line"></div>
+				</div>
+			</div><!-----signup---->
+			<div id="lean_overlay"></div>
+		   
+		</div><!-----wrapper---->
+    </body>
+</html>

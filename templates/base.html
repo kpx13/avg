@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Главная{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        
+        {% block extended_head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <a class="logo" href="#"><img src="/static/images/logo.png" alt="Авангард Техцентр" /></a>
+                    <div class="zap">
+                        <span>Запишись на техосмотр в Авангард</span>
+                        <br />
+                        <a class="more" href="#">Подробнее...</a>
+                        
+                    </div> 
+                <div class="contact">
+                    <span class="address">г. Москва, ул. Миклухо-маклая, 15/3.</span>
+                    <div class="phone">
+                        8 (495) 434-00-30
+                        <br />
+                        8 (965) 197-67-67
+                    </div>
+                </div> 
+            </div> <!-----header---->
+           
+            <div class="main_menu">
+                <ul>
+                    <li class="current">
+                        <a href="#">Главная</a>
+                    </li>
+                    <li>
+                        <a href="#">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="#">Корпоративным клиентам</a>
+                    </li>
+                    <li>
+                        <a href="#">Акции</a>
+                    </li>
+                    <li>
+                        <a href="#">Статьи</a>
+                    </li>
+                    <li>
+                        <a href="#">Блог</a>
+                    </li>
+                    <li>
+                        <a href="#">О нас</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div><!-----main_menu---->
+           
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div><!-----content---->
+           
+            <div class="footer">
+                <span>АВАНГАРД 2013 © Все права защищены</span>
+            </div>
+           
+            <div id="signup">
+                <div id="signup-ct">
+                    <div id="signup-header">
+                        <h2>Запись на диагностику в Автотехцентр «Авангард» :</h2>
+                        <a class="modal_close" href="#"></a>
+                    </div>
+                    
+                    <form action="">
+         
+                        <div class="txt-fld">
+                        <label for="">Имя*:</label>
+                        <input id="" class="good_input" name="" type="text">
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Фамилия*:</label>
+                            <input id="" name="" type="text">
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Отчество:</label>
+                            <input id="" name="" type="text">
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Телефон*:</label>
+                            <input id="" name="" type="text">
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">E-mail*:</label>
+                            <input id="" name="" type="text">
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Марка*:</label>
+                                <div class="select">
+                                    <select  name="type" id="type">
+                                        <option selected="selected">марка 1</option>
+                                        <option>марка 2</option>
+                                    </select>
+                                </div>
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Код выпуска*:</label>
+                                <div class="select">
+                                    <select  name="type" id="type">
+                                        <option selected="selected">2012</option>
+                                        <option>2013</option>
+                                    </select>
+                                </div>
+
+                        </div>
+                        <div class="txt-fld">
+                            <label for="">Приблизительно опишите неисправность или какие необходимо провести работы* :</label>
+                            <textarea id="" name="" type="text"></textarea>
+
+                        </div>
+                        <span>*обязательные поля для заполнения</span>
+                        <div class="btn-fld">
+                            <button type="submit">Отправить</button>
+                        </div>
+                    </form>
+                    <div class="red_line"></div>
+                </div>
+            </div><!-----signup---->
+            <div id="lean_overlay"></div>
+           
+        </div><!-----wrapper---->
+    </body>
+</html>

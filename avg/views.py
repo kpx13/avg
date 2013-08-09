@@ -110,6 +110,9 @@ def subscribe(request):
             form = SubscribeForm()
             messages.success(request, u'Вы успешно подписались на рассылку.')
             return HttpResponseRedirect('/')
+        else:
+            messages.error(request, u'Необходимо ввести адрес.')
+            return HttpResponseRedirect('/')
     raise Http404() 
 
 def request_f(request):

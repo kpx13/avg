@@ -52,9 +52,45 @@ class CustomIndexDashboard(Dashboard):
         
         self.children.append(
             modules.ModelList(
-                title = u'Продукты',
+                title = u'Страницы в О нас',
                 models=(
-                    'products.models.Product',
+                    'about.models.Article',
+                ),
+            )
+        )
+        
+        self.children.append(
+            modules.ModelList(
+                title = u'Акции',
+                models=(
+                    'action.models.Action',
+                ),
+            )
+        )
+        
+        self.children.append(
+            modules.ModelList(
+                title = u'Статьи',
+                models=(
+                    'articles.models.Article',
+                ),
+            )
+        )
+        
+        self.children.append(
+            modules.ModelList(
+                title = u'Блог',
+                models=(
+                    'blog.models.Article',
+                ),
+            )
+        )
+        
+        self.children.append(
+            modules.ModelList(
+                title = u'Услуги',
+                models=(
+                    'services.models.Article',
                 ),
             )
         )
@@ -72,18 +108,9 @@ class CustomIndexDashboard(Dashboard):
         
         self.children.append(
             modules.ModelList(
-                title = u'Заявки на обратный звонок',
+                title = u'Подписки',
                 models=(
-                    'call_order.models.Request',
-                ),
-            )
-        )
-        
-        self.children.append(
-            modules.ModelList(
-                title = u'Бонусы',
-                models=(
-                    'bonuses.models.Article',
+                    'subscribe.models.Subscribe',
                 ),
             )
         )

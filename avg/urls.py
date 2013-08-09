@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^ckeditor/', include('ckeditor.urls')),
 
     url(r'^$', views.home),
+    url(r'^home/$', views.home),
     url(r'^services/$', views.services),
     url(r'^services/(?P<page_name>[\w-]+)/$', views.services),
     url(r'^actions/$', views.actions),
@@ -30,17 +31,9 @@ urlpatterns = patterns('',
     url(r'^blog/(?P<page_name>[\w-]+)/$', views.blog),
     url(r'^about/$', views.about),
     url(r'^about/(?P<page_name>[\w-]+)/$', views.about),
+    
+    url(r'^subscribe/$', views.subscribe),
+    url(r'^request/$', views.request_f),
+    
     url(r'^(?P<page_name>[\w-]+)/$' , views.page),
 )
-
-"""
-    url(r'^call/$', views.call),
-    url(r'^request/$', views.request_f),
-    url(r'^bonuses/$', views.bonuses),
-    url(r'^bonuses/(?P<page_name>[\w-]+)/$', views.bonuses_in),
-    url(r'^contacts/$', views.contacts),
-    url(r'^about/$', views.about),
-    url(r'^products/$', views.products),
-    url(r'^products/(?P<page_name>[\w-]+)/$', views.products_in),
-    url(r'^services/$', views.services),
-    """

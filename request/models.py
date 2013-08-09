@@ -10,7 +10,7 @@ class Request(models.Model):
     email  = models.CharField(u'e-mail*', max_length=255)
     car = models.CharField(u'марка*', max_length=255)
     year = models.CharField(u'год выпуска*', max_length=255)
-    msg = models.TextField(u'Приблизительно опишите неисправность или какие необходимо провести работы*')
+    msg = models.TextField(u'Сообщение*')
     request_date = models.DateTimeField(u'дата заявки', auto_now_add=True)
                     
     class Meta:

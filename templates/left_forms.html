@@ -1,9 +1,50 @@
 <div class="left_a_one">
     <span>Подпишись на Спец. предложения в “АВАНГАРД”</span>
-    <input type="text" placeholder="Ваш e-mail"/>
-    <a class="more" href="#">Подписаться</a>
+    <form action ='/subscribe/' method='post'>
+        <input type="text" placeholder="Ваш e-mail" name='email'/>
+        <button type='submit' class="more" href="#">Подписаться</button>
+        <input type="hidden" name='next' value='/{{ request_url }}'/>
+        <input type="hidden" name='action' value='subscribe'/>
+        {% csrf_token %}
+    </form>
 </div>
+
+
 <div class="left_a_two">
     <span>Запишись на диагностику ON_LINE</span>
     <a id="go" rel="leanModal" name="signup" href="#signup">Далее</a>
 </div>
+
+<div id="signup">
+                <div id="signup-ct">
+                    <div id="signup-header">
+                        <h2>Запись на диагностику в Автотехцентр «Авангард» :</h2>
+                        <a class="modal_close" href="#"></a>
+                    </div>
+                    
+                    <form  action='/request/' method='post'>
+                        {% for f in request_form %}
+                            
+                            <div class="txt-fld">
+                                {% if f.errors %}
+                                    <span style='color: red !important'><label for="">{{ f.label }}:</label></span>
+                                {% else %}
+                                    <label for="">{{ f.label }}:</label>
+                                {% endif %}
+                                
+                                {{ f }}
+                            </div>
+                        {% endfor %}
+
+                        <span>*обязательные поля для заполнения</span>
+                        <div class="btn-fld">
+                            <button type="submit">Отправить</button>
+                        </div>
+                        
+                        <input type="hidden" name='next' value='/{{ request_url }}'/>
+                        <input type="hidden" name='action' value='request'/>
+                        {% csrf_token %}
+                    </form>
+                    <div class="red_line"></div>
+                </div>
+            </div><!-----signup---->

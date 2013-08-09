@@ -14,7 +14,8 @@ def sendmail(subject, body):
         [config_value('MyApp', 'EMAIL')])
 
 class RequestForm(ModelForm):
-
+    msg = forms.CharField(widget=forms.widgets.Textarea(), label=u'Приблизительно опишите неисправность или какие необходимо провести работы*')
+    
     class Meta:
         model = Request
         exclude = ('request_date', )

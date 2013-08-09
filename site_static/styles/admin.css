@@ -1,0 +1,59 @@
+body
+{
+}
+
+#header {
+    background: white;
+}
+
+#user-tools{
+/*     display: none; */
+}
+
+.dashboard-container
+{
+}
+
+.dashboard-title{
+    display: none;
+}
+
+#header #branding h1 {
+    margin: 0;
+    padding: 5px 0px;
+    text-indent: -9999px;
+    height: 20px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    
+}
+
+a {
+
+}
+
+#header a {
+    color: #f19017 !important;
+}
+
+
+#header
+{
+    color: #333;
+}
+
+#header #branding a
+{
+    color: black !important;
+    font-size: large !important;
+}
+
+.grp-horizontal-list
+{
+}
+
+.grp-horizontal-list ul li
+{
+    list-style: none;
+    
+}

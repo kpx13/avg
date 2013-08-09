@@ -20,6 +20,10 @@
                     select:12000,
                     auto:true,
                 });
+                
+                {% if request_form_open %}
+                    $('#go').click();
+                {% endif %}
             });
         </script>
         {% block extended_head %}
@@ -75,6 +79,16 @@
             </div><!-----main_menu---->
            
             <div class="content">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class='message-wrapper'>
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message|safe }}
+                        </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    
                 {% block content %}
                 {% endblock %}
             </div><!-----content---->
@@ -83,62 +97,7 @@
                 <span>АВАНГАРД 2013 © Все права защищены</span>
             </div>
            
-            <div id="signup">
-                <div id="signup-ct">
-                    <div id="signup-header">
-                        <h2>Запись на диагностику в Автотехцентр «Авангард» :</h2>
-                        <a class="modal_close" href="#"></a>
-                    </div>
-                    
-                    <form action="">
-         
-                        <div class="txt-fld">
-                        <label for="">Имя*:</label>
-                        <input id="" class="good_input" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Фамилия*:</label>
-                            <input id="" name="" type="text">
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Отчество:</label>
-                            <input id="" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Телефон*:</label>
-                            <input id="" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">E-mail*:</label>
-                            <input id="" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Марка*:</label>
-                            <input id="" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Год выпуска*:</label>
-                            <input id="" name="" type="text">
-
-                        </div>
-                        <div class="txt-fld">
-                            <label for="">Приблизительно опишите неисправность или какие необходимо провести работы* :</label>
-                            <textarea id="" name="" type="text"></textarea>
-
-                        </div>
-                        <span>*обязательные поля для заполнения</span>
-                        <div class="btn-fld">
-                            <button type="submit">Отправить</button>
-                        </div>
-                    </form>
-                    <div class="red_line"></div>
-                </div>
-            </div><!-----signup---->
+            
             <div id="lean_overlay"></div>
            
         </div><!-----wrapper---->

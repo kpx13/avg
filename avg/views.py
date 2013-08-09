@@ -26,7 +26,7 @@ from livesettings import config_value
 def get_common_context(request):
     c = {}
     c['request_url'] = request.path
-    c['subscribe_form'] = SubscribeForm()
+    c['request_form'] = RequestForm()
     c['slideshow'] = Slider.objects.all()
     c.update(csrf(request))
     return c
@@ -101,62 +101,32 @@ def about(request, page_name=None):
     else:
         return HttpResponseRedirect('/about/%s/' % AboutArticle.objects.all()[0].slug)
 
-"""
-def call(request):
-    c = get_common_context(request)
-    if request.POST and request.POST['action'] == 'call':
-        call_form = RequestForm(request.POST)
-        if call_form.is_valid():
-            call_form.save()
-            call_form = RequestForm()
-            #messages.success(request, u'Спасибо! В ближайшее время мы Вам перезвоним.')
+
+def subscribe(request):
+    if request.POST and request.POST['action'] == 'subscribe':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscribeForm()
+            messages.success(request, u'Вы успешно подписались на рассылку.')
             return HttpResponseRedirect(request.POST['next'])
     raise Http404() 
 
 def request_f(request):
-    c = get_common_context(request)
     if request.POST and request.POST['action'] == 'request':
-        call_form = RegisterForm(request.POST)
-        if call_form.is_valid():
-            call_form.save()
-            call_form = RegisterForm()
-            #messages.success(request, u'Спасибо! В ближайшее время мы Вам перезвоним.')
+        form = RequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = RequestForm()
+            messages.success(request, u'Ваша заявка отправлена.')
             return HttpResponseRedirect(request.POST['next'])
+        else:
+            c = get_common_context(request)
+            c.update(Page.get_by_slug('home'))
+            c['actions'] = Action.objects.all()
+            c['request_url'] = 'home'
+            c['request_form'] = form
+            c['request_form_open'] = True
+            return render_to_response('home.html', c, context_instance=RequestContext(request))
     raise Http404() 
     
-
-def bonuses(request):
-    c = get_common_context(request)
-    c['bonuses'] = Article.objects.all()
-    return render_to_response('bonuses.html', c, context_instance=RequestContext(request))
-
-def bonuses_in(request, page_name):
-    c = get_common_context(request)
-    c['bonus'] = Article.get_by_slug(page_name)
-    return render_to_response('bonuses_in.html', c, context_instance=RequestContext(request))
-
-
-def contacts(request):
-    c = get_common_context(request)
-    return render_to_response('contacts.html', c, context_instance=RequestContext(request))
-
-def about(request):
-    c = get_common_context(request)
-    c.update(Page.get_by_slug('about'))
-    return render_to_response('about.html', c, context_instance=RequestContext(request))
-
-def products(request):
-    c = get_common_context(request)
-    c['products'] = Product.objects.all()
-    return render_to_response('products.html', c, context_instance=RequestContext(request))
-
-def products_in(request, page_name):
-    c = get_common_context(request)
-    c['product'] = Product.get_by_slug(page_name)
-    return render_to_response('products_in.html', c, context_instance=RequestContext(request))    
-
-def services(request):
-    c = get_common_context(request)
-    c.update(Page.get_by_slug('services'))
-    return render_to_response('services.html', c, context_instance=RequestContext(request))
-"""

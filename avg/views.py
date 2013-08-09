@@ -109,7 +109,7 @@ def subscribe(request):
             form.save()
             form = SubscribeForm()
             messages.success(request, u'Вы успешно подписались на рассылку.')
-            return HttpResponseRedirect(request.POST['next'])
+            return HttpResponseRedirect('/')
     raise Http404() 
 
 def request_f(request):
@@ -119,7 +119,7 @@ def request_f(request):
             form.save()
             form = RequestForm()
             messages.success(request, u'Ваша заявка отправлена.')
-            return HttpResponseRedirect(request.POST['next'])
+            return HttpResponseRedirect('/')
         else:
             c = get_common_context(request)
             c.update(Page.get_by_slug('home'))

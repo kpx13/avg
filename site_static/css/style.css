@@ -43,7 +43,7 @@ margin: 0 0 15px 0;
 .clear {
 clear: both;
 }
-button.more, a.more, a#go {
+button.more, a.more, button#go {
 font: bold 14px arial;
 text-decoration: none;
 color: #fff;
@@ -154,7 +154,7 @@ border: 1px solid black;
 padding: 0 10px;
 display: block;
 }
-.left_a_one button.more, .left_a_two a#go {
+.left_a_one button.more, .left_a_two button#go {
 margin: 0px;
 position: absolute;
 left: 10px;

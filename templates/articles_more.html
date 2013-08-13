@@ -31,8 +31,7 @@
         
         <div class="content_in">
             {% if a.image %} <img src="/media/{{ a.image }}/" alt="">{% endif %}
-            {{ a.content|safe }}
-            {% if base_url == 'blog' %}
+            {{ a.content_more|safe }}
                 <div class="link_in">
                     <div class="soc_link">
                         <span>Поделиться:</span>
@@ -41,50 +40,9 @@
                         <a class="tw" href="#"></a>
                         <a class="in" href="#"></a>
                     </div>
-                    <a class="more" href="{{ request_url }}more/">Подробнее</a>
+                    <a class="more" href="../">Назад</a>
                 </div>
-            {% endif %}
         </div><!-------Content_in------>
-        
-        {% if base_url == 'about' %}
-            <div class="content_in">
-                <div class="time">
-                    <strong>Время работы:</strong><br />
-                    пн-сб 8.00–17.00 (без перерывов)<br />
-                    вс – выходной
-                </div>
-            
-                <div class="address">
-                    <strong>Наш адрес: </strong><br />
-                    г. Москва, ул. Миклухо-маклая, 15/3.
-                    <ul class="phone">
-                        <li>
-                            8 (495) 434-00-30
-                        </li>
-                        <li>
-                            8 (965) 197-67-67
-                        </li>
-                    </ul>
-                </div>
-        
-            </div><!-------content_in2------>
-        {% endif %}
-        
-        {% if base_url == 'services' %}
-       <!-- <div class="link">
-            <div class="our_work">
-                Примеры наших работ <a class="more" href="#">Подробнее...</a>
-            </div>
-            <div class="soc_link">
-                <span>Поделиться</span>
-                <a class="face" href="#"></a>
-                <a class="vk" href="#"></a>
-                <a class="tw" href="#"></a>
-                <a class="in" href="#"></a>
-            </div>
-        </div>-->
-        {% endif %}
-        
         
         
     </div><!-------right------>

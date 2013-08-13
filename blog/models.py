@@ -5,7 +5,8 @@ import pytils
 
 class Article(models.Model):
     title = models.CharField(max_length=128, verbose_name=u'заголовок')
-    content = RichTextField(verbose_name=u'текст')
+    content = RichTextField(verbose_name=u'вступительный текст')
+    content_more = RichTextField(blank=True, verbose_name=u'текст в подробнее')
     slug = models.SlugField(verbose_name=u'слаг', unique=True, blank=True, help_text=u'Заполнять не нужно')
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=u'дата написания')
     

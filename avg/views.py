@@ -90,6 +90,17 @@ def blog(request, page_name=None):
     else:
         return HttpResponseRedirect('/blog/%s/' % BlogArticle.objects.all()[0].slug)
 
+def blog_more(request, page_name=None):
+    if page_name:
+        c = get_common_context(request)
+        c['a'] = BlogArticle.get_by_slug(page_name)
+        c['articles'] = BlogArticle.objects.all()
+        c['base_url'] = 'blog'
+        c['base_title'] = u'Блог'
+        return render_to_response('articles_more.html', c, context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/blog/%s/' % BlogArticle.objects.all()[0].slug)
+
 def about(request, page_name=None):
     if page_name:
         c = get_common_context(request)

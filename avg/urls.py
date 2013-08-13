@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^articles/(?P<page_name>[\w-]+)/$', views.articles),
     url(r'^blog/$', views.blog),
     url(r'^blog/(?P<page_name>[\w-]+)/$', views.blog),
+    url(r'^blog/(?P<page_name>[\w-]+)/more/$', views.blog_more),
     url(r'^about/$', views.about),
     url(r'^about/(?P<page_name>[\w-]+)/$', views.about),
     

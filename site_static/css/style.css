@@ -389,25 +389,18 @@ padding: 5px 0 0 5px;
 .link_in .soc_link {
 font-size: 14px;
 color: #909090;
-width: 220px;
+width: 250px;
 text-align: right;
 }
 .link .soc_link {
 float: right;
 font-size: 14px;
 color: #909090;
-width: 220px;
+width: 250px;
+margin-right: 20px;
 text-align: right;
 }
-.soc_link a.face {background: url(../images/soc_icon.png);}
-.soc_link a.vk {background: url(../images/soc_icon.png)92px 0px;}
-.soc_link a.tw {background: url(../images/soc_icon.png)60px 0px;}
-.soc_link a.in {background: url(../images/soc_icon.png)29px 0px;}
-.soc_link a {
-width: 29px;
-height: 29px;
-display: inline-block;
-}
+
 .soc_link span {
 margin: 8px 0 0 0;
 float: left;
@@ -546,7 +539,7 @@ text-align: justify;
 margin: 0 5px 0 -5px;
 padding: 5px;
 font: bold 14px arial;
-color: #a91515;
+color: #e70705;
 border-bottom: 2px solid #a91515;
 width: 935px;
 }

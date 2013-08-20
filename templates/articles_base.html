@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ a.title }}{% endblock %}
+{% block title %}Тех. центр Авангард - {{ a.title }}{% endblock %}
 
 
 {% block content %}
+                    <script type="text/javascript">(function () {
+                        if (window.pluso)if (typeof window.pluso.start == "function") return;
+                        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                        s.type = 'text/javascript';
+                        s.charset = 'UTF-8';
+                        s.async = true;
+                        s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+                        var h = d[g]('head')[0] || d[g]('body')[0];
+                        h.appendChild(s);
+                    })();</script>
     <div class="left">
         <div class="left_menu">
             <ul>
@@ -36,10 +46,10 @@
                 <div class="link_in">
                     <div class="soc_link">
                         <span>Поделиться:</span>
-                        <a class="face" href="#"></a>
-                        <a class="vk" href="#"></a>
-                        <a class="tw" href="#"></a>
-                        <a class="in" href="#"></a>
+                        <div class="pluso" data-options="medium,square,line,horizontal,nocounter,theme=04"
+                            data-services="vkontakte,facebook,twitter,google"
+                            data-background="transparent" data-url="http://avg-service.ru{{ request_url }}">
+                        </div>
                     </div>
                     <a class="more" href="{{ request_url }}more/">Подробнее</a>
                 </div>
@@ -71,18 +81,18 @@
         {% endif %}
         
         {% if base_url == 'services' %}
-       <!-- <div class="link">
+        <div class="link">
             <div class="our_work">
-                Примеры наших работ <a class="more" href="#">Подробнее...</a>
+                Примеры наших работ <a class="more" href="/blog/">Подробнее...</a>
             </div>
             <div class="soc_link">
                 <span>Поделиться</span>
-                <a class="face" href="#"></a>
-                <a class="vk" href="#"></a>
-                <a class="tw" href="#"></a>
-                <a class="in" href="#"></a>
+                <div class="pluso" data-options="medium,square,line,horizontal,nocounter,theme=04"
+                    data-services="vkontakte,facebook,twitter,google"
+                    data-background="transparent" data-url="http://avg-service.ru{{ request_url }}">
+                </div>
             </div>
-        </div>-->
+        </div>
         {% endif %}
         
         

@@ -30,7 +30,7 @@
         {% endif %}
         
         <div class="content_in">
-            {% if a.image %} <img src="/media/{{ a.image }}/" alt="">{% endif %}
+            {% if a.image %} <img src="/media/{{ a.image }}" alt="">{% endif %}
             {{ a.content|safe }}
             {% if base_url == 'blog' %}
                 <div class="link_in">

@@ -1,9 +1,16 @@
+@font-face {
+font-family: Avg;
+src: url('avg65c.ttf');
+}
+
+* { font-family: Avg ; font-size: 0.95em; font-weight: lighter }
+
 body, div {
 	margin:0;
 	padding:0;
 	display: block;
 	vertical-align: top;
-	font-family: arial;
+    font-family: arial;
 }
 ul {
 list-style: none;

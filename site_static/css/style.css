@@ -918,3 +918,5 @@ margin: 0;
 -.alert-block p + p {
  margin-top: 5px;
  }
+
+.hidden {color: transparent}

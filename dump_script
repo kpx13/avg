@@ -1,0 +1,1 @@
+python manage.py dumpdata pages about action articles blog request services slideshow subscribe > dump_all___.json
